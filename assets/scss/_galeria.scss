@@ -93,6 +93,11 @@ img{
         position: relative;
         display: inline-block;
         text-align: center;
+        .carrito{
+            position: absolute;
+            top: 70%;
+            left: 33%;
+        }
     }
     div{
         box-shadow: 3px 5px 10px 3px rgba(128, 128, 128, 0.597);
@@ -118,10 +123,9 @@ img{
                 cursor: pointer;
                 &:hover{
                     border-style: double;
-                    color: black;
-                    transform: scale(1.1,1.1);
-                    transition: all 0.5s ease-in-out;
+                    color: gray;
                     box-shadow: 18px 20px 60px black;
+                    transition: all 0.5s ease-in-out;
                 }
             }
             div {

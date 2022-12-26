@@ -77,6 +77,11 @@ img {
   display: inline-block;
   text-align: center;
 }
+.galeria_ .contenedor .carrito {
+  position: absolute;
+  top: 70%;
+  left: 33%;
+}
 .galeria_ div {
   box-shadow: 3px 5px 10px 3px rgba(128, 128, 128, 0.597);
   height: 380px;
@@ -105,10 +110,9 @@ img {
 }
 .galeria_ div img:hover {
   border-style: double;
-  color: black;
-  transform: scale(1.1, 1.1);
-  transition: all 0.5s ease-in-out;
+  color: gray;
   box-shadow: 18px 20px 60px black;
+  transition: all 0.5s ease-in-out;
 }
 .galeria_ div div {
   height: 8%;
