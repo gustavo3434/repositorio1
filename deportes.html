@@ -17,6 +17,11 @@
     <nav class="menu bg-dg navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand tit" href="index.html">Tienda AF</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-1 busqueda" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-dark" id="buscar" type="submit">Search</button>
+          </form>
+          <a class="btn btn-dark btn-sm" href="./carrito.html" role="button">Carrito</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -81,56 +86,61 @@
           </select>
         </div>
       </div>                      <!--------------------------->
-      <p class="centrar">Inicio> Deportes</p>
-      <h2 class="ind">DEPORTES</h2>
-      <div class="galeria_">   <!--GALERIA DE INDUMENTARIA-->
-        <div class="contenedor prod">
-          <button type="button" class="carrito btn btn-dark btn-sm">+</button>
-          <img src="./multimedia/deportes/monopatin_cobra.jpg" alt="Monopatin_cobra">
-          <a href="#" class="nombre_producto">MONOPATIN COBRA</a>
-          <a href="#" class="precio"><br>$39000</a>
-        </div>
-        <div class="contenedor prod">
-          <button type="button" class="carrito btn btn-dark btn-sm">+</button>
-          <img src="./multimedia/deportes/bicicleta_bmx.jpg"alt="Bicicleta_bmx">
-          <a href="#" class="nombre_producto">BICICLETA BMX</a>
-          <a href="#" class="precio"><br>$139000</a>
-        </div>
-        <div class="contenedor prod">
-          <button type="button" class="carrito btn btn-dark btn-sm">+</button>
-          <img src="./multimedia/deportes/skate_freeVibe.jpg" alt="Skate_freeVibe">
-          <a href="#" class="nombre_producto">SKATE FREE VIBE</a>
-          <a href="#" class="precio"><br>$59000</a>
-        </div>
-        <div class="contenedor prod">
-          <button type="button" class="carrito btn btn-dark btn-sm">+</button>
-          <img src="./multimedia/deportes/tabla_captainFin_rosa.jpg" alt="Tabla_captainFin_rosa">
-          <a href="#" class="nombre_producto">TABLA CAPTAIN FIN</a>
-          <a href="#" class="precio"><br>$49000</a>
-        </div>
-        <div class="contenedor prod">
-          <button type="button" class="carrito btn btn-dark btn-sm">+</button>
-          <img src="./multimedia/deportes/rollers_start.jpg" alt="Rollers_start">
-          <a href="#" class="nombre_producto">ROLLERS START</a>
-          <a href="#" class="precio"><br>$39000</a>
-        </div>
-        <div class="contenedor prod">
-          <button type="button" class="carrito btn btn-dark btn-sm">+</button>
-          <img src="./multimedia/deportes/skate_progressive.jpg" alt="Skate_progressive">
-          <a href="#" class="nombre_producto">SKATE PROGRESSIVE</a>
-          <a href="#" class="precio"><br>$69000</a>
-        </div>
-        <div class="contenedor prod">
-          <button type="button" class="carrito btn btn-dark btn-sm">+</button>
-          <img src="./multimedia/deportes/PATINES_ARTISTICOS_STARK.jpg" alt="PATINES_ARTISTICOS_STARK">
-          <a href="#" class="nombre_producto">PATINES ARTISTICOS STARK</a>
-          <a href="#" class="precio"><br>$35000</a>
-        </div>
-        <div class="contenedor prod">
-          <button type="button" class="carrito btn btn-dark btn-sm">+</button>
-          <img src="./multimedia/deportes/TABLA_SKATE_FREE_VIBE.jpg" alt="TABLA_SKATE_FREE_VIBE">
-          <a href="#" class="nombre_producto">TABLA SKATE REE VIBE</a>
-          <a href="#" class="precio"><br>$45000</a>
+      <div class="galeria_ " id="filtro"> 
+
+      </div>
+      <div class="ocultar">
+        <p class="centrar">Inicio> Deportes</p>
+        <h2 class="ind">DEPORTES</h2>
+        <div class="galeria_">   <!--GALERIA DE INDUMENTARIA-->
+          <div class="contenedor prod">
+            <button type="button" id="17" class="agregar btn btn-dark btn-sm">+</button>
+            <img src="./multimedia/deportes/monopatin_cobra.jpg" alt="Monopatin_cobra">
+            <a href="#" class="nombre_producto">MONOPATIN COBRA</a>
+            <a href="#" class="precio"><br>$39000</a>
+          </div>
+          <div class="contenedor prod">
+            <button type="button" id="18" class="agregar btn btn-dark btn-sm">+</button>
+            <img src="./multimedia/deportes/bicicleta_bmx.jpg"alt="Bicicleta_bmx">
+            <a href="#" class="nombre_producto">BICICLETA BMX</a>
+            <a href="#" class="precio"><br>$199000</a>
+          </div>
+          <div class="contenedor prod">
+            <button type="button" id="19" class="agregar btn btn-dark btn-sm">+</button>
+            <img src="./multimedia/deportes/skate_freeVibe.jpg" alt="Skate_freeVibe">
+            <a href="#" class="nombre_producto">SKATE FREE VIBE</a>
+            <a href="#" class="precio"><br>$59000</a>
+          </div>
+          <div class="contenedor prod">
+            <button type="button" id="20" class="agregar btn btn-dark btn-sm">+</button>
+            <img src="./multimedia/deportes/tabla_captainFin_rosa.jpg" alt="Tabla_captainFin_rosa">
+            <a href="#" class="nombre_producto">TABLA CAPTAIN FIN</a>
+            <a href="#" class="precio"><br>$49000</a>
+          </div>
+          <div class="contenedor prod">
+            <button type="button" id="21" class="agregar btn btn-dark btn-sm">+</button>
+            <img src="./multimedia/deportes/rollers_start.jpg" alt="Rollers_start">
+            <a href="#" class="nombre_producto">ROLLERS START</a>
+            <a href="#" class="precio"><br>$39000</a>
+          </div>
+          <div class="contenedor prod">
+            <button type="button" id="22" class="agregar btn btn-dark btn-sm">+</button>
+            <img src="./multimedia/deportes/skate_progressive.jpg" alt="Skate_progressive">
+            <a href="#" class="nombre_producto">SKATE PROGRESSIVE</a>
+            <a href="#" class="precio"><br>$69000</a>
+          </div>
+          <div class="contenedor prod">
+            <button type="button" id="23" class="agregar btn btn-dark btn-sm">+</button>
+            <img src="./multimedia/deportes/PATINES_ARTISTICOS_STARK.jpg" alt="PATINES_ARTISTICOS_STARK">
+            <a href="#" class="nombre_producto">PATINES ARTISTICOS STARK</a>
+            <a href="#" class="precio"><br>$35000</a>
+          </div>
+          <div class="contenedor prod">
+            <button type="button" id="24" class="agregar btn btn-dark btn-sm">+</button>
+            <img src="./multimedia/deportes/TABLA_SKATE_FREE_VIBE.jpg" alt="TABLA_SKATE_FREE_VIBE">
+            <a href="#" class="nombre_producto">TABLA SKATE REE VIBE</a>
+            <a href="#" class="precio"><br>$45000</a>
+          </div>
         </div>
       </div>                        <!--------------------------->
     </main>
@@ -170,5 +180,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
    <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script> -->
    <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="./js/tiendaAf.js"></script>
 </body>
 </html>
