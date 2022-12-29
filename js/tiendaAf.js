@@ -55,7 +55,7 @@ const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
 
 const armarTabla = (prod) => {
     return `<div class="contenedor" id="espacio">
-                <button type="button" id="${prod.id}" class="agregar btn btn-black btn-sm">+</button>
+                <button type="button" id="${prod.id}" class="agregar btn btn-dark btn-sm">+</button>
                 <img src="${prod.img}" >
                 <a href="#" class="nombre_producto">${prod.nombre}</a>
                 <a href="#" class="precio"><br>$${prod.precio}</a>
