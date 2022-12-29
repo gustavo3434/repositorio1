@@ -93,6 +93,9 @@ h2{
     font-size: 2.5rem;
 }
 
+#espacio{
+    margin-top: 6rem;
+}
                     /* Indice Promocion seccion Oferta*/
 .producto{
     position: absolute;
@@ -222,6 +225,15 @@ h2{
                 }
         }
     }
+    /* Logos de IG FC del Footer*/
+    .ig{
+        margin-left: 40%;
+        
+    }
+    .face{ 
+        margin-left: 50%;
+        
+    }
 }
                             /*Responsive < 768px*/
 @media screen and (max-width:768px) 
@@ -335,14 +347,12 @@ h2{
     }
     /* Logos de IG FC del Footer*/
     .ig{
-        img{
-            left: 42%;
-        }
+        margin-left: 40%;
+        
     }
     .face{ 
-        img{
-            left: 55%;
-        }
+        margin-left: 50%;
+        
     }
 }
                                 /*Responsive < 450px*/
@@ -440,14 +450,13 @@ h2{
     /*--------------------*/
     /* Logos de IG FC del Footer*/
     .ig{
-        img{
-            left: 40%;
-        }
+        margin-left: 31%;
+        
+
     }
     .face{
-        img{
-            left: 55%;
-        }
+        margin-left: 46%;
+        
     }
     
                                 /* Formulario de promociones */

@@ -93,7 +93,7 @@ img{
         position: relative;
         display: inline-block;
         text-align: center;
-        .carrito{
+        .agregar{
             position: absolute;
             top: 70%;
             left: 33%;
@@ -130,6 +130,11 @@ img{
             }
             div {
                 @include sizes(8%,40%);
+            }
+            .precio{
+                color: black;
+                font-size: 0.9rem;
+                font-weight: bold;
             }
     }
 }
