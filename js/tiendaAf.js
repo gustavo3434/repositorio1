@@ -90,8 +90,6 @@ const cargarCarrito = (array,para) => {
 
 function eliminarDeCarrito(id){
     let productoEncontrado = carritoJS.find(prod => prod.id === parseInt(id))
-    //let index = carritoJS.indexOf(productoEncontrado.id)
-    //carritoJS.splice(index,1)
     carritoJS = carritoJS.filter((item) => item !== productoEncontrado)
     cargarCarrito(carritoJS,elementosCarrito)
     guardarLocal("listaProductos", JSON.stringify(carritoJS));
@@ -148,7 +146,9 @@ function agregarACarrito(id){
     } else{
         productosCarrito.push(productoEncontrado)
     }
+    carritoJS = 
     guardarLocal("listaProductos", JSON.stringify(productosCarrito));
+    
 }
 
 
