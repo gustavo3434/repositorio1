@@ -49,7 +49,7 @@ let elementosCarrito = document.querySelector("#elementos_carrito")
 let contenedorMujer = document.querySelector("#contenedor_mujer")
 let productosMujer = productos.filter(produc => produc.categoria === "MUJER")
 let eliminar = document.querySelectorAll(".eliminar")
-
+let carritoJS = []
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
 
@@ -91,9 +91,8 @@ const cargarCarrito = (array,para) => {
 function eliminarDeCarrito(id){
     let productoEncontrado = carritoJS.find(prod => prod.id === parseInt(id))
     carritoJS = carritoJS.filter((item) => item !== productoEncontrado)
-    cargarCarrito(carritoJS,elementosCarrito)
+    cargarCarrito(carritoJS,elementosCarrito) 
     guardarLocal("listaProductos", JSON.stringify(carritoJS));
-    
 }
 
 
@@ -130,9 +129,7 @@ const cargarProductos = (array,para) => {
 agregar.forEach(el => {
     el.addEventListener("click", (e) => {
         agregarACarrito(e.target.id)
-        
     });
-    
 })
 
 
@@ -146,8 +143,9 @@ function agregarACarrito(id){
     } else{
         productosCarrito.push(productoEncontrado)
     }
-    carritoJS = 
-    guardarLocal("listaProductos", JSON.stringify(productosCarrito));
+    
+    guardarLocal("listaProductos",JSON.stringify(productosCarrito.concat(carritoJS)));
+    
     
 }
 
@@ -159,8 +157,8 @@ buscar.addEventListener("click",(e) => {
     
 })
 
-carritoJS = JSON.parse(localStorage.getItem("listaProductos"))
 
+carritoJS = JSON.parse(localStorage.getItem("listaProductos"))
 cargarCarrito(carritoJS,elementosCarrito)
 
 
