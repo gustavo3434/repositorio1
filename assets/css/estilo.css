@@ -327,6 +327,10 @@ body {
   color: black;
 }
 
+.scrol {
+  height: 380px;
+}
+
 /* Indice con filtros */
 .indice {
   display: grid;
@@ -612,6 +616,16 @@ h2 {
   }
   .face {
     margin-left: 50%;
+  }
+}
+/*Responsive < 517px*/
+@media screen and (max-width: 514px) {
+  .galeria_ div {
+    box-shadow: 3px 5px 10px black;
+    height: 375px;
+    width: 50%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 }
 /*Responsive < 450px*/

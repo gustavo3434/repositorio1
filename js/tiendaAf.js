@@ -45,6 +45,8 @@ const inputSearch = document.querySelector(".busqueda")
 const buscar = document.querySelector("#buscar")
 let agregar = document.querySelectorAll(".agregar")
 const carrito = document.querySelector(".carrito")
+let idCarrito = document.querySelector("#carrito")
+const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
 let contenedorMujer = document.querySelector("#contenedor_mujer")
 let productosMujer = productos.filter(produc => produc.categoria === "MUJER")
@@ -83,6 +85,7 @@ const cargarCarrito = (array,para) => {
     eliminar.forEach(el => {
         el.addEventListener("click", (e) => {
             eliminarDeCarrito(e.target.id)
+            
         });
     })
 }
@@ -91,8 +94,24 @@ const cargarCarrito = (array,para) => {
 function eliminarDeCarrito(id){
     let productoEncontrado = carritoJS.find(prod => prod.id === parseInt(id))
     carritoJS = carritoJS.filter((item) => item !== productoEncontrado)
-    cargarCarrito(carritoJS,elementosCarrito) 
-    guardarLocal("listaProductos", JSON.stringify(carritoJS));
+    
+    if (carritoJS.length > 0) {
+        cargarCarrito(carritoJS,elementosCarrito)
+        guardarLocal("listaProductos", JSON.stringify(carritoJS));
+        totalcarrito.innerText = totalCarrito(carritoJS)
+    }else {
+        ocul = document.querySelector(".ocultar").style.display = "none"
+        cargarCarrito(carritoJS,elementosCarrito)
+        guardarLocal("listaProductos", JSON.stringify(carritoJS));
+        let carritoVacio = document.createElement(`h2`)
+        carritoVacio.innerHTML = 
+        `<p class="centrar">El carrito de compras está vacío.</p>`
+        idCarrito.appendChild(carritoVacio)
+        ocu = document.querySelector(".scrols").style.display = "none"
+        
+    }
+    
+    
 }
 
 
@@ -156,10 +175,32 @@ buscar.addEventListener("click",(e) => {
     filtrado ()
     
 })
-
+function totalCarrito (array) {
+    let total = 0
+    for (const producto of array) {
+        total += producto.precio;
+    }
+    return total
+}
 
 carritoJS = JSON.parse(localStorage.getItem("listaProductos"))
-cargarCarrito(carritoJS,elementosCarrito)
+if (carritoJS.length > 0) {
+    cargarCarrito(carritoJS,elementosCarrito)
+    totalCarrito(carritoJS)
+    totalcarrito.innerText = totalCarrito(carritoJS)
+}else {
+    let carritoVacio = document.createElement(`h2`)
+    carritoVacio.innerHTML = 
+    `<p class="centrar">El carrito de compras está vacío.</p>`
+    idCarrito.appendChild(carritoVacio)
+    ocu = document.querySelector(".scrol").style.display = "none"
+    ocul = document.querySelector(".ocultar").style.display = "none"
+}
+
+
+
+
+
 
 
 
