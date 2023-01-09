@@ -1,3 +1,4 @@
+                            //ARRAY DE PRODUCTOS//
 const productos = [{id: 1,nombre:"GORRA ELEMENT WOLFEBORO",color: "NEGRO", precio: 11999, img:"./multimedia/accsesorios/gorra_element.jpg"},
 {id: 2,nombre:"MOCHILA ZIMITH BOMBIT", color: "ROSA",precio: 15000, img: "./multimedia/accsesorios/mochila_zimith.jpg"},
 {id: 3,nombre:"GORRO C1RCA WALTER", color: "ROJO",precio: 10000, img: "./multimedia/accsesorios/gorro_c1rca.jpg" },
@@ -38,8 +39,8 @@ const productos = [{id: 1,nombre:"GORRA ELEMENT WOLFEBORO",color: "NEGRO", preci
 {id: 38,nombre:"JOGGIN RUSTY FLOREADO", color: "AZUL",precio: 12000, img:"./multimedia/mujer/joggin_rusty_floreado.jpg" },
 {id: 39,nombre:"TOP CHECKS/CUADRILLE", categoria:"MUJER" ,color: "VERDE",precio: 9000, img:"./multimedia/mujer/TOP_CHECKS_CUADRILLE.jpg"},
 {id: 40,nombre:"SHORT RUSTY HEARTBREAKER",categoria:"MUJER" ,color: "MARRON",precio: 10500, img:"./multimedia/mujer/SHORT_RUSTY_HEARTBREAKER.jpg"},
-
 ]
+                                //VARIABLES//
 let filt = document.querySelector("#filtro")
 const inputSearch = document.querySelector(".busqueda")
 const buscar = document.querySelector("#buscar")
@@ -71,7 +72,7 @@ const armarCarrito = (prod) => {
             </div>`
 }
 
-const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };// FUNCION PARA GUARDAR DATOS EN LOCALSTORAGE 
 
 const cargarCarrito = (array,para) => {
     let tabla = ""
@@ -90,7 +91,7 @@ const cargarCarrito = (array,para) => {
 }
 
 
-function eliminarDeCarrito(id){
+function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
     let productoEncontrado = carritoJS.find(prod => prod.id === parseInt(id))
     carritoJS = carritoJS.filter((item) => item !== productoEncontrado)
     if (carritoJS.length > 0) {
@@ -109,7 +110,7 @@ function eliminarDeCarrito(id){
     }
 }
 
-const filtrado = () => {
+const filtrado = () => { //FUNCION DE FILTRADO DE PRODUCTOS 
     let parametro = inputSearch.value.trim().toUpperCase()
     let resultados =  []
     if (parametro != "" ) {
@@ -120,7 +121,7 @@ const filtrado = () => {
     }
 }
 
-const cargarProductos = (array,para) => {
+const cargarProductos = (array,para) => { 
     let tabla = ""
     if (array.length > 0 ) {
         array.forEach((produc) => {
@@ -134,16 +135,16 @@ const cargarProductos = (array,para) => {
             agregarACarrito(e.target.id)
         });
     })
-
 }
+
 agregar.forEach(el => {
     el.addEventListener("click", (e) => {
         agregarACarrito(e.target.id)
     });
 })
-let productosCarrito = []
 
-function agregarACarrito(id){
+let productosCarrito = []
+function agregarACarrito(id){ //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
     let productoEncontrado = productos.find(prod => prod.id === parseInt(id))
     if(productosCarrito.some((el) => el.id == productoEncontrado.id)){
         productosCarrito.map(el => el.cantidad += 1)
@@ -159,7 +160,7 @@ buscar.addEventListener("click",(e) => {
     filtrado ()
     
 })
-function totalCarrito (array) {
+function totalCarrito (array) { // FUNCION TOTAL DE CARRITO
     let total = 0
     for (const producto of array) {
         total += producto.precio;
@@ -167,7 +168,7 @@ function totalCarrito (array) {
     return total
 }
 
-carritoJS = JSON.parse(localStorage.getItem("listaProductos"))
+carritoJS = JSON.parse(localStorage.getItem("listaProductos"))//DATOS DE LOCALSTORAGE
 if (carritoJS.length > 0) {
     cargarCarrito(carritoJS,elementosCarrito)
     totalCarrito(carritoJS)
@@ -180,11 +181,4 @@ if (carritoJS.length > 0) {
     ocu = document.querySelector(".scrol").style.display = "none"
     ocul = document.querySelector(".ocultar").style.display = "none"
 }
-
-
-
-
-
-
-
 
