@@ -98,7 +98,7 @@ h2{
 }
 
 .espacio{
-    margin-top: 7rem;
+    margin-top: 5rem;
 }
 #espacio{
     margin-top: 3rem;
@@ -380,6 +380,9 @@ h2{
 {
     main{
         margin-top: 3rem;
+    }
+    .d-flex{
+        display: none;
     }
     /* Galeria Principal Index*/
     #galeria{

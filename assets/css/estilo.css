@@ -375,7 +375,7 @@ h2 {
 }
 
 .espacio {
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 
 #espacio {
@@ -636,6 +636,9 @@ h2 {
 @media screen and (max-width: 450px) {
   main {
     margin-top: 3rem;
+  }
+  .d-flex {
+    display: none;
   }
   /* Galeria Principal Index*/
   #galeria .contenedor .centrado:hover {
