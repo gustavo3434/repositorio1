@@ -49,7 +49,7 @@ const carrito = document.querySelector(".carrito")
 let idCarrito = document.querySelector("#carrito")
 const totalcarrito = document.querySelector("#tot-carrito")
 let elementosCarrito = document.querySelector("#elementos_carrito")
-let contenedorMujer = document.querySelector("#contenedor_mujer")
+const contenedorMujer = document.querySelector("#contenedor_mujer")
 let productosMujer = productos.filter(produc => produc.categoria === "MUJER")
 let eliminar = document.querySelectorAll(".eliminar")
 let carritoJS = []
@@ -89,7 +89,6 @@ const cargarCarrito = (array,para) => {
         });
     })
 }
-
 
 function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
     let productoEncontrado = carritoJS.find(prod => prod.id === parseInt(id))
