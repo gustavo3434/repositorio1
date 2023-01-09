@@ -98,7 +98,7 @@ function eliminarDeCarrito(id){ //FUNCION PARA ELIMINAR PRODUCTOS AL CARRITO
         guardarLocal("listaProductos", JSON.stringify(carritoJS));
         totalcarrito.innerText = totalCarrito(carritoJS)
     }else {
-        ocul = document.querySelector(".ocultar1").style.display = "none"
+        ocul = document.querySelector(".ocultarTot").style.display = "none"
         cargarCarrito(carritoJS,elementosCarrito)
         guardarLocal("listaProductos", JSON.stringify(carritoJS));
         let carritoVacio = document.createElement(`h2`)
@@ -173,11 +173,12 @@ if (carritoJS.length > 0) {
     totalCarrito(carritoJS)
     totalcarrito.innerText = totalCarrito(carritoJS)
 }else {
+    ocul = document.querySelector(".ocultarTot").style.display = "none"
     let carritoVacio = document.createElement(`h2`)
     carritoVacio.innerHTML = 
     `<p class="centrar">El carrito de compras está vacío.</p>`
     idCarrito.appendChild(carritoVacio)
     ocu = document.querySelector(".scrol").style.display = "none"
-    ocul = document.querySelector(".ocultar1").style.display = "none"
+    
 }
 
